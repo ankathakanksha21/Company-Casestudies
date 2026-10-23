@@ -36,12 +36,10 @@ A raw chunk of text often doesn't match how people word their questions, so sear
 
 This gives search more ways to match a question to the right chunk.
 
-## 4. Cite every answer
+## 4. Reduce hallucinations
 
-- Each retrieved chunk goes into the prompt labelled with its source URL, and the model has to cite those URLs.
-- When the docs don't cover a question, Genie points the user to the on-call team instead of guessing.
-
-Both reduce hallucinations.
+- **Cite every answer.** Each retrieved chunk goes into the prompt labelled with its source URL, and the model has to cite those URLs.
+- **Proper handoff.** When the docs don't cover a question, Genie points the user to the on-call team instead of guessing.
 
 ## 5. Measure quality and cost
 
