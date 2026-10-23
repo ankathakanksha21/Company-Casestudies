@@ -15,6 +15,10 @@ Uber built Genie, an internal RAG assistant that answers engineering questions i
 
 Engineers already ask for help in Slack support channels, so Genie answers there automatically. There's no new tool to adopt, which is why people actually use it.
 
+<p align="center">
+  <img src="images/slack-support-channel.png" alt="Support conversation in a Slack channel" width="500">
+</p>
+
 ## 2. Keep the knowledge fresh
 
 Uber's answers were spread across multiple sources that kept changing:
@@ -36,13 +40,27 @@ A raw chunk of text often doesn't match how people word their questions, so sear
 
 This gives search more ways to match a question to the right chunk.
 
+<p align="center">
+  <img src="images/chunk-enrichment.png" alt="A raw chunk misses the question &quot;Why did my job get killed after 2 hours?&quot;, while the enriched chunk with a summary, keywords and an FAQ matches it" width="500">
+</p>
+
 ## 4. Reduce hallucinations
 
 - **Cite every answer.** Each retrieved chunk goes into the prompt labelled with its source URL, and the model has to cite those URLs.
+
+  <p align="center">
+    <img src="images/cited-answer.png" alt="Two retrieved chunks with source URLs go into the LLM, and the answer cites both" width="500">
+  </p>
+
 - **Proper handoff.** When the docs don't cover a question, Genie points the user to the on-call team instead of guessing.
 
 ## 5. Measure quality and cost
 
 - **Collect feedback you can act on.** Genie uses four buttons instead of a thumbs up or down: Resolved, Helpful, Not Helpful and Not Relevant. This tells you exactly what went wrong.
+
+  <p align="center">
+    <img src="images/feedback-buttons.png" alt="A typical chatbot's thumbs up and down compared with Genie's four feedback buttons and what each one means" width="500">
+  </p>
+
 - **Grade the answers and the docs.** An LLM judge scores Genie's answers against golden answers that experts wrote once. The judge also grades the source docs and suggests fixes to them, because better docs mean better answers.
 - **Track cost per request.** A request ID travels through every call, from Slack to the LLM, so you can trace the cost of every question.
