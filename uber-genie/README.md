@@ -43,6 +43,6 @@ This gives search more ways to match a question to the right chunk.
 
 ## 5. Measure quality and cost
 
-1. **Collect feedback you can act on.** Genie uses four buttons instead of a thumbs up or down: Resolved, Helpful, Not Helpful and Not Relevant. This tells you exactly what went wrong.
-2. **Grade the answers and the docs.** An LLM judge scores Genie's answers against golden answers that experts wrote once. The judge also grades the source docs and suggests fixes to them, because better docs mean better answers.
-3. **Track cost per request.** A request ID travels through every call, from Slack to the LLM, so you can trace the cost of every question.
+- **Collect feedback you can act on.** Genie uses four buttons instead of a thumbs up or down: Resolved, Helpful, Not Helpful and Not Relevant. This tells you exactly what went wrong.
+- **Grade the answers and the docs.** An LLM judge scores Genie's answers against golden answers that experts wrote once. The judge also grades the source docs and suggests fixes to them, because better docs mean better answers.
+- **Track cost per request.** A request ID travels through every call, from Slack to the LLM, so you can trace the cost of every question.
